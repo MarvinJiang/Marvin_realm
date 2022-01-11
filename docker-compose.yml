@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+  db:
+    image: mysql:latest
+    ports:
+      - '3307:3306'
+    environment:
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'passwd123'
+      MYSQL_DATABASE: 'users'
+      MYSQL_ROOT_PASSWORD: 'passwd123'
+  web:
+    build: .
+    # command: python app.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db

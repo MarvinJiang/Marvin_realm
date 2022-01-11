@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+<style>
+    p::first-line {
+        color: rgb(109, 70, 201);
+        background-color: transparent;
+        text-decoration: none;
+      } 
+    
+    h1::first-line{
+        color: rgb(3, 155, 201);
+        background-color: transparent;
+        text-decoration: none;
+    }
+</style>
+
+
+
+
+
+{% endblock %}
+
+
+{% block content %} 
+<body class="text-center">
+    <main class="form-signin">
+      <form action="{{ url_for('login') }}" method="post">
+        
+        <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+    
+        <div class="form-floating">
+          <input type="username" class="form-control" id="floatingInput" name="username" placeholder="name@example.com">
+          <label for="floatingInput">Username</label>
+        </div>
+
+        <div class="form-floating">
+          <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
+          <label for="floatingPassword">Password</label>
+        </div>
+    
+        <div class="checkbox mb-3">
+          <label>
+            <input type="checkbox" value="remember-me" name="remember-me"> Remember me
+          </label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+        <p class="mt-5 mb-3 text-muted">© 2017–2021</p>
+      </form>
+    </main>    
+</body>
+
+    <h1 class="h3 mb-3 fw-normal">New user?</h1>
+    <button onclick="location.href='{{url_for('register')}}'" class="btn btn-outline-success" type="button">Register!</button>
+
+{% endblock %} 

@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<style>
+    p::first-line {
+        color: rgb(109, 70, 201);
+        background-color: transparent;
+        text-decoration: none;
+      } 
+    
+    h1::first-line{
+        color: rgb(3, 155, 201);
+        background-color: transparent;
+        text-decoration: none;
+    }
+</style>
+{% endblock %}
+
+{% block content %} 
+<div class="p-5 mb-4 bg-light rounded-3">
+    <div class="container-fluid py-5">
+        <form action="{{ url_for('save_profile') }}" method="post">
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                <label for="inputPassword6" class="col-form-label">Location</label>
+                </div>
+                <div class="col-auto">
+                <input type="location" id="inputPassword6" class="form-control" name="location" aria-describedby="passwordHelpInline">
+                </div>
+                <div class="col-auto">
+                <span id="passwordHelpInline" class="form-text">
+                    {{ info.location }}
+                </span>
+                </div>
+            </div>
+
+
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                <label for="inputPassword6" class="col-form-label">Hobby</label>
+                </div>
+                <div class="col-auto">
+                <input type="hobby" id="inputPassword6" class="form-control" name="hobby" aria-describedby="passwordHelpInline">
+                </div>
+                <div class="col-auto">
+                <span id="passwordHelpInline" class="form-text">
+                    {{ info.hobby }}
+                </span>
+                </div>
+            </div>
+
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                <label for="inputPassword6" class="col-form-label">Favorite food</label>
+                </div>
+                <div class="col-auto">
+                <input type="fav_food" id="inputPassword6" class="form-control" name="fav_food" aria-describedby="passwordHelpInline">
+                </div>
+                <div class="col-auto">
+                <span id="passwordHelpInline" class="form-text">
+                    {{ info.fav_food }}
+                </span>
+                </div>
+            </div>
+
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                <label for="inputPassword6" class="col-form-label">Favorite movie</label>
+                </div>
+                <div class="col-auto">
+                <input type="fav_movie" id="inputPassword6" class="form-control" name="fav_movie" aria-describedby="passwordHelpInline">
+                </div>
+                <div class="col-auto">
+                <span id="passwordHelpInline" class="form-text">
+                    {{ info.fav_movie }}
+                </span>
+                </div>
+            </div>
+
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                <label for="inputPassword6" class="col-form-label">Favorite game</label>
+                </div>
+                <div class="col-auto">
+                <input type="fav_game" id="inputPassword6" class="form-control" name="fav_game" aria-describedby="passwordHelpInline">
+                </div>
+                <div class="col-auto">
+                <span id="passwordHelpInline" class="form-text">
+                    {{ info.fav_game }}
+                </span>
+                </div>
+            </div>
+
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                <label for="inputPassword6" class="col-form-label">Marriage status</label>
+                </div>
+                <div class="col-auto">
+                    <select class="form-select" name="marriage" ria-label="Default select example">
+                        <option selected>Select</option>
+                        <option value="Single">Single</option>
+                        <option value="Married">Married</option>
+                        <option value="Divorced">Divorced</option>
+                    </select>
+                </div>
+                <div class="col-auto">
+                    <span id="passwordHelpInline" class="form-text">
+                        {{ info.marriage }}
+                    </span>
+                </div>
+            </div>
+
+
+            <button class="btn btn-outline-secondary" type="submit">Save</button>
+
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}
